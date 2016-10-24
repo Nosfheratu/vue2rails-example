@@ -1,0 +1,29 @@
+<script type="text/x-template" id="employee-row">
+  <tr>
+    <td>{{ employee.name }}</td>
+    <td>{{ employee.email }}</td>
+    <td>{{ employee.manager }}</td>
+  </tr>
+</script>
+
+<h1>Employees</h1>
+
+<div id="employees">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Manager</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        is="employee-row"
+        v-for="employee in employees"
+        :employee="employee">
+      </tr>
+    </tbody>
+  </table>
+</div>
