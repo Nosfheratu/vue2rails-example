@@ -31,6 +31,16 @@ Vue.component('employee-row', {
           that.errors = response.responseJSON.errors;
         }
       });
+    },
+    fireEmployee: function() {
+      var that = this;
+      $.ajax({
+        method: 'DELETE',
+        url: '/employees/' + that.employee.id + '.json',
+        success: function(response) {
+          that.$el.remove();
+        }
+      });
     }
   }
 })

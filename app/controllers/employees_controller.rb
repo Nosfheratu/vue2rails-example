@@ -34,6 +34,13 @@ class EmployeesController < ApplicationController
     end
   end
 
+  def destroy
+    Employee.find(params[:id]).destroy
+    respond_to do |format|
+      format.json { render json: {}, status: :no_content }
+    end
+  end
+
   private
 
   def employee_params
